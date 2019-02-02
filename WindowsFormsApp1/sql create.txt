@@ -1,0 +1,49 @@
+﻿
+CREATE TABLE [dbo].si_Inventory(
+	[ItemNum] [nvarchar](20) NOT NULL,
+	[ItemName_Extra] [nvarchar](40) ,
+	[Dept_ID] [nvarchar](8) ,
+	[Cost] [decimal](25, 8) ,
+	[Price] [decimal](25, 8) ,
+	[Retail_Price] [decimal](25, 8) ,
+	[In_Stock] [decimal](25, 8) ,
+	) ON [PRIMARY]
+GO
+
+
+SELECT  [ItemNum],ItemName_Extra,[Dept_ID],[Cost],[Price],[Retail_Price],[In_Stock] FROM [Hibro].[dbo].[Inventory]
+
+
+CREATE TABLE [dbo].[si_Inventory_DiscLevels](
+	[Store_ID] [nvarchar](10) NOT NULL,
+	[ItemNum] [nvarchar](20) NOT NULL,
+	[Level] [nvarchar](2) NOT NULL,
+	[Perc] [real] NULL,
+ ) 
+
+
+ CREATE TABLE [dbo].[si_Departments](
+	[Dept_ID] [nvarchar](8) NOT NULL,
+	[Description] [nvarchar](30) ,
+	Magento_ID [nvarchar](8) ,
+	[MagentoDescription] [nvarchar](50) ,
+	Parent_id [nvarchar](8) ,
+	
+) 
+
+
+DROP TABLE [dbo].[si_Inventory]
+
+CREATE TABLE [dbo].[si_Inventory](
+	[ItemNum] [nvarchar](20) NOT NULL,
+	[ItemName_Extra] [nvarchar](40) NULL,
+	[Dept_ID] [nvarchar](8) NULL,
+	[Cost] [decimal](25, 8) NULL,
+	[Price] [decimal](25, 8) NULL,
+	[Retail_Price] [decimal](25, 8) NULL,
+	[In_Stock] [decimal](25, 8) NULL,
+	[ItemType] [smallint] NULL
+) ON [PRIMARY]
+
+INSERT INTO [dbo].[si_Inventory] SELECT  [ItemNum],ItemName_Extra,[Dept_ID],[Cost],[Price],[Retail_Price],[In_Stock],[ItemType] 
+FROM [Inventory]

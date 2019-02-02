@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Id>bee05885-0358-4b4b-97d6-c1b772eaf76d</Id>
+  <ProductName>Barcode.dll</ProductName>
+  <SubscriptionUntil>2013-06-20</SubscriptionUntil>
+  <RegisteredTo>Won Yun</RegisteredTo>
+  <LicenseType>Single developer</LicenseType>
+  <BuyerName>Won Yun</BuyerName>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>r4yZf40quvJaIyWDW+yNDsH/Vg4=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>bLV66gucNk7XMNKMLrFlAHhjpUDiTjGfJESFrKlxE5HTUjDbOYErTLUdbhwyxEtJ+BCihMYiK79VI7VvAKNNNNZSMFLjhxD7uNpmz847AOvXgfBEu+T/xwIDe5iTNkegOPz9bk0yhSF0hUsORr/Dvg15U3QnHqAOZGrtqXGSBdg=</SignatureValue>
+  </Signature>
+</License>

@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: MG2Connector, Configuration: Debug Any CPU ------
+1>  MG2Connector -> C:\Users\wonyun\Downloads\Magento2Connector-master\Magento2Connector-master\MagentoConnector\MG2Connector\bin\Debug\MG2Connector.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
