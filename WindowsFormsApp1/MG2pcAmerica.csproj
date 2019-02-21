@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0EC06237-09A3-4694-945C-D955EFEFC5F3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>pcAmericaLabelPrint</AssemblyName>
+    <RootNamespace>pcAmericaPakageControl</RootNamespace>
+    <AssemblyName>pcAmericaPakageControl</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,12 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>download_BW3_icon.ico</ApplicationIcon>
+    <ApplicationIcon>system_package_icon_IOH_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApp1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Barcode">
-      <HintPath>.\Barcode.dll</HintPath>
-    </Reference>
     <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
       <HintPath>..\packages\ExcelDataReader.3.4.2\lib\net45\ExcelDataReader.dll</HintPath>
     </Reference>
@@ -56,6 +56,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -131,11 +134,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BarcodeLicense.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="download_BW3_icon.ico" />
     <Content Include="sql create.txt" />
+    <Content Include="system_package_icon_IOH_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

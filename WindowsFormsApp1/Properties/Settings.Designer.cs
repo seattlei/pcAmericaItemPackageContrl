@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.Properties {
+namespace pcAmericaPakageControl.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

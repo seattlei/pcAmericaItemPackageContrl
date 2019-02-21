@@ -36,17 +36,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.PrintDocument1 = new System.Drawing.Printing.PrintDocument();
             this.PrintPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.PrintDialog1 = new System.Windows.Forms.PrintDialog();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Label1 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.txtDBIP = new System.Windows.Forms.TextBox();
             this.txtDBname = new System.Windows.Forms.TextBox();
             this.btnCREConnect = new System.Windows.Forms.Button();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +58,16 @@
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtInvoiceNumber = new System.Windows.Forms.TextBox();
             this.txtItemNumber = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            this.btmRefresh = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // PrintPreviewDialog1
@@ -125,22 +122,24 @@
             // 
             // btnCREConnect
             // 
-            this.btnCREConnect.Location = new System.Drawing.Point(511, -1);
+            this.btnCREConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCREConnect.Location = new System.Drawing.Point(2, 29);
             this.btnCREConnect.Name = "btnCREConnect";
-            this.btnCREConnect.Size = new System.Drawing.Size(74, 23);
+            this.btnCREConnect.Size = new System.Drawing.Size(160, 54);
             this.btnCREConnect.TabIndex = 32;
             this.btnCREConnect.TabStop = false;
-            this.btnCREConnect.Text = "Connecting";
+            this.btnCREConnect.Text = "Invoice List";
             this.btnCREConnect.UseVisualStyleBackColor = true;
             this.btnCREConnect.Click += new System.EventHandler(this.btnCREConnect_Click);
             // 
             // DataGridView1
             // 
+            this.DataGridView1.AllowUserToAddRows = false;
+            this.DataGridView1.AllowUserToDeleteRows = false;
             this.DataGridView1.AllowUserToResizeColumns = false;
             this.DataGridView1.AllowUserToResizeRows = false;
             this.DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -160,6 +159,7 @@
             this.DataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DataGridView1.Location = new System.Drawing.Point(0, 88);
+            this.DataGridView1.MultiSelect = false;
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -170,12 +170,15 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView1.RowHeadersVisible = false;
             this.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView1.Size = new System.Drawing.Size(406, 606);
+            this.DataGridView1.Size = new System.Drawing.Size(406, 490);
             this.DataGridView1.TabIndex = 29;
             this.DataGridView1.TabStop = false;
+            this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             this.DataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
+            this.DataGridView1.Click += new System.EventHandler(this.DataGridView1_Click);
             // 
             // menuStrip1
             // 
@@ -185,7 +188,7 @@
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1162, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1106, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -277,7 +280,6 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -286,7 +288,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -311,26 +313,18 @@
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(750, 606);
+            this.dataGridView2.Size = new System.Drawing.Size(694, 490);
             this.dataGridView2.TabIndex = 44;
             this.dataGridView2.TabStop = false;
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+            this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
             this.dataGridView2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView2_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 24);
-            this.label2.TabIndex = 45;
-            this.label2.Text = "Hold Invoice List";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(415, 55);
+            this.label3.Location = new System.Drawing.Point(934, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 24);
             this.label3.TabIndex = 46;
@@ -338,8 +332,10 @@
             // 
             // txtInvoiceNumber
             // 
+            this.txtInvoiceNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtInvoiceNumber.Font = new System.Drawing.Font("Adobe Gothic Std B", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtInvoiceNumber.Location = new System.Drawing.Point(184, 27);
+            this.txtInvoiceNumber.Location = new System.Drawing.Point(168, 28);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
             this.txtInvoiceNumber.Size = new System.Drawing.Size(225, 55);
             this.txtInvoiceNumber.TabIndex = 47;
@@ -348,27 +344,55 @@
             // 
             // txtItemNumber
             // 
+            this.txtItemNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtItemNumber.Font = new System.Drawing.Font("Adobe Gothic Std B", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtItemNumber.Location = new System.Drawing.Point(616, 27);
+            this.txtItemNumber.Location = new System.Drawing.Point(412, 26);
             this.txtItemNumber.Name = "txtItemNumber";
-            this.txtItemNumber.Size = new System.Drawing.Size(312, 55);
+            this.txtItemNumber.Size = new System.Drawing.Size(372, 55);
             this.txtItemNumber.TabIndex = 48;
+            this.txtItemNumber.Click += new System.EventHandler(this.txtItemNumber_Click);
             this.txtItemNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemNumber_KeyPress);
             this.txtItemNumber.Leave += new System.EventHandler(this.txtItemNumber_Leave);
+            // 
+            // btmRefresh
+            // 
+            this.btmRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmRefresh.Location = new System.Drawing.Point(790, 27);
+            this.btmRefresh.Name = "btmRefresh";
+            this.btmRefresh.Size = new System.Drawing.Size(138, 54);
+            this.btmRefresh.TabIndex = 49;
+            this.btmRefresh.TabStop = false;
+            this.btmRefresh.Text = "Item Refresh";
+            this.btmRefresh.UseVisualStyleBackColor = true;
+            this.btmRefresh.Click += new System.EventHandler(this.btmRefresh_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(938, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 27);
+            this.button1.TabIndex = 51;
+            this.button1.TabStop = false;
+            this.button1.Text = "Reset Count";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1162, 706);
+            this.ClientSize = new System.Drawing.Size(1106, 578);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btmRefresh);
             this.Controls.Add(this.txtDBIP);
             this.Controls.Add(this.txtDBname);
             this.Controls.Add(this.btnCREConnect);
             this.Controls.Add(this.txtItemNumber);
             this.Controls.Add(this.txtInvoiceNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Label1);
@@ -377,33 +401,30 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pcAmerica Label Print";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmMain_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        internal System.Windows.Forms.BindingSource BindingSource3;
         internal System.Drawing.Printing.PrintDocument PrintDocument1;
         internal System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog1;
         internal System.Windows.Forms.PrintDialog PrintDialog1;
-        internal System.Windows.Forms.BindingSource bindingSource1;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.TextBox txtDBIP;
         internal System.Windows.Forms.TextBox txtDBname;
         private System.Windows.Forms.Button btnCREConnect;
-        internal System.Windows.Forms.BindingSource bindingSource2;
         internal System.Windows.Forms.DataGridView DataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -418,10 +439,12 @@
         internal System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem1;
         internal System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.TextBox txtInvoiceNumber;
         internal System.Windows.Forms.TextBox txtItemNumber;
+        private System.Windows.Forms.Button btmRefresh;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
